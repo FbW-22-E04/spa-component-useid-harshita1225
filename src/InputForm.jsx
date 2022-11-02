@@ -1,10 +1,18 @@
+import React, { useId } from "react";
+import { useRef } from "react";
+
 function InputForm(props) {
-  const id = "myId";
+  const id = useId();
+  const inputRef = useRef();
   return (
-    <div className="inputForm">
-      <label htmlFor={id}>{props.label}</label>
-      <input id={id} type={props.type} />
-    </div>
+    <React.Fragment>
+      <div className="inputForm">
+        <label htmlFor={id} onClick={() => inputRef.current.focus()}>
+          {props.label}
+        </label>
+        <input ref={inputRef} id={id} type={props.type} />
+      </div>
+    </React.Fragment>
   );
 }
 
