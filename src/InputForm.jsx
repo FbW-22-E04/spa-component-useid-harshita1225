@@ -3,6 +3,10 @@ import { useRef } from "react";
 
 function InputForm(props) {
   const id = useId();
+
+  //another way to generate unique ids
+  //const id = new Date().getUTCMilliseconds();
+
   const inputRef = useRef();
   return (
     <React.Fragment>
